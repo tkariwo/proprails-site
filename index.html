@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prop Rails — Real-time risk infrastructure for crypto prop firms</title>
+  <meta name="description" content="Prop Rails monitors crypto prop accounts in real time, enforces configured risk limits, and measures breach-to-flat latency with auditable evidence.">
+  <meta name="theme-color" content="#06100d">
+  <link rel="canonical" href="https://proprails.co.za/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Prop Rails">
+  <meta property="og:url" content="https://proprails.co.za/">
+  <meta property="og:title" content="Prop Rails — risk controls that act, not just alert">
+  <meta property="og:description" content="An OKX v5 risk engine that cuts a breaching prop account and measures its own reaction: 426.9 ms median breach to flat over 50 forced breaches. Method and data published.">
+  <meta property="og:image" content="https://proprails.co.za/assets/okx-benchmark.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="675">
+  <meta property="og:image:alt" content="Breach-to-flat latency across 50 forced breaches on an OKX demo account">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prop Rails — risk controls that act, not just alert">
+  <meta name="twitter:description" content="426.9 ms median breach to flat over 50 forced breaches on OKX. Method, data and a reproduction script are public.">
+  <meta name="twitter:image" content="https://proprails.co.za/assets/okx-benchmark.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/logo.svg" alt=""><span>Prop Rails</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="active" href="index.html">Home</a>
+      <a href="platform.html">Platform</a>
+      <a href="benchmark.html">Benchmark</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="https://github.com/tkariwo/prop-rails-okx-benchmark" target="_blank" rel="noopener">Public evidence</a>
+      <a class="btn btn-primary" href="contact.html">Run a pilot</a>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow" style="color:#79efbf">Crypto prop risk infrastructure</span>
+        <h1>Risk controls that <span class="accent">act</span>, not just alert.</h1>
+        <p>Prop Rails watches trading accounts in real time, detects configured rule breaches, cuts exposure, cancels working orders, and records exactly how long the response took.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">Run a read-only pilot <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="benchmark.html">See measured performance</a>
+        </div>
+        <div class="hero-note"><span class="dot"></span><span><strong>Evidence-first:</strong> public methodology, run-level data and reproducible benchmark results.</span></div>
+      </div>
+
+      <div class="hero-console reveal" aria-label="Illustrative Prop Rails risk console">
+        <div class="console-shell">
+          <div class="console-top">
+            <div class="console-dots"><i></i><i></i><i></i></div>
+            <div class="console-title">Risk execution console</div>
+            <div class="live-pill mock">Illustrative</div>
+          </div>
+          <div class="console-body">
+            <div class="console-grid">
+              <div class="mini-stat"><span>Account equity</span><strong>$48,920</strong></div>
+              <div class="mini-stat"><span>Daily floor</span><strong>$48,750</strong></div>
+              <div class="mini-stat"><span>Open positions</span><strong>3</strong></div>
+            </div>
+            <div class="chart-card">
+              <div class="chart-head">
+                <div><small>Real-time equity</small><strong>$48,920.42</strong></div>
+                <span class="rule-chip">Floor $48,750</span>
+              </div>
+              <div class="chart">
+                <svg viewBox="0 0 520 145" preserveAspectRatio="none" aria-hidden="true">
+                  <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fe8a6" stop-opacity=".22"/><stop offset="1" stop-color="#3fe8a6" stop-opacity="0"/></linearGradient></defs>
+                  <g stroke="rgba(255,255,255,.05)" stroke-width="1"><line x1="0" y1="30" x2="520" y2="30"/><line x1="0" y1="72" x2="520" y2="72"/><line x1="0" y1="114" x2="520" y2="114"/></g>
+                  <line x1="0" y1="116" x2="520" y2="116" stroke="#ff7777" stroke-width="1.2" stroke-dasharray="5 6" opacity=".7"/>
+                  <path d="M0 68 C28 64 44 72 67 60 S110 42 138 49 172 66 198 61 244 39 274 45 313 85 341 79 374 56 401 63 434 98 461 94 488 78 520 83 L520 145 L0 145Z" fill="url(#fill)"/>
+                  <path d="M0 68 C28 64 44 72 67 60 S110 42 138 49 172 66 198 61 244 39 274 45 313 85 341 79 374 56 401 63 434 98 461 94 488 78 520 83" fill="none" stroke="#54ebb0" stroke-width="2.4"/>
+                </svg>
+              </div>
+            </div>
+            <div class="console-events">
+              <div class="event"><time>14:12:08</time><strong>Position push received</strong><em>18 ms</em></div>
+              <div class="event"><time>14:12:08</time><strong>Rules evaluated</strong><em>0.07 ms</em></div>
+              <div class="event warn"><time>14:12:09</time><strong>Drawdown threshold approached</strong><em>-0.34%</em></div>
+              <div class="event"><time>14:12:09</time><strong>Account state verified</strong><em>OK</em></div>
+            </div>
+          </div>
+        </div>
+        <p class="console-caption">Interface mock-up with sample values — not a recording of a real account. Every measured figure on this site comes from the published benchmark: <a href="benchmark.html">see the data and method</a>.</p>
+        <div class="hero-float">
+          <small>Measured engine dispatch</small>
+          <strong>0.3 ms</strong>
+          <span>Median breach → first cut request, OKX demo benchmark.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="container trust-inner">
+      <span>Built around exchange-native controls</span>
+      <div class="trust-mark active"><i></i> OKX v5 enforcement</div>
+      <div class="trust-mark active"><i></i> Bybit read-only pilot</div>
+      <div class="trust-mark"><i></i> WebSocket + REST fallback</div>
+      <div class="trust-mark"><i></i> Auditable run data</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Measured, not marketed</span><h2>Publish the number that risk teams actually care about.</h2></div>
+        <p>A challenge rule only protects a firm when exposure is actually removed. Prop Rails measures from breach detection to the exchange’s own position push confirming the account is flat.</p>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-main reveal">
+          <div class="proof-number">426.9</div>
+          <div class="proof-unit">ms median breach → flat</div>
+          <h3>Confirmed by OKX’s own position push.</h3>
+          <p>50 forced breaches on a dedicated OKX demo account, measured from a Windows 11 host in Johannesburg. The benchmark records dispatch, exchange acknowledgement, fill events, flat confirmation and request paths.</p>
+        </article>
+        <div class="proof-side">
+          <article class="proof-card reveal"><strong>452.1 ms</strong><span>p90 breach → flat across the 50-run benchmark.</span></article>
+          <article class="proof-card reveal"><strong>509.2 ms</strong><span>p99 breach → flat across the same 50 runs.</span></article>
+          <article class="proof-card reveal"><strong>542.9 ms</strong><span>Worst single run of the 50. The tail is published, not trimmed.</span></article>
+          <article class="proof-card reveal"><strong>50 / 50</strong><span>Runs reached flat on the first enforcement attempt.</span></article>
+          <article class="proof-card reveal"><strong>0.3 ms</strong><span>Median local decision + dispatch before network latency.</span></article>
+          <article class="proof-card reveal"><strong>433.1 ms</strong><span>Median to fully cleared: flat, resting orders cancelled, stops gone.</span></article>
+        </div>
+      </div>
+      <p class="proof-foot">OKX demo result from 16 Sep 2026. Demo is not production and network location materially affects end-to-end latency. <a href="benchmark.html">Read the methodology and caveats →</a></p>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">One engine, three operating modes</span><h2>Evaluate first. Enforce when you are ready.</h2></div>
+        <p>Start without trade permissions, establish the current baseline, then decide whether Prop Rails should become an active enforcement layer.</p>
+      </div>
+      <div class="mode-grid">
+        <article class="mode-card featured reveal">
+          <div class="num">01</div><h3>Pilot</h3><p>Observe your existing risk stack with a read-only key and measure when your own system reacts.</p>
+          <ul><li>Read-only by design</li><li>OKX and Bybit observation</li><li>Breach-to-response evidence</li><li>Run report for risk review</li></ul>
+        </article>
+        <article class="mode-card reveal">
+          <div class="num">02</div><h3>Watch</h3><p>Continuously enforce configured challenge rules on live or demo accounts.</p>
+          <ul><li>Flatten positions on breach</li><li>Cancel live and algo orders</li><li>Retry and verify until flat</li><li>Keep-flat breach latch</li></ul>
+        </article>
+        <article class="mode-card reveal">
+          <div class="num">03</div><h3>Bench</h3><p>Force repeatable breaches on a dedicated demo account to measure the complete cut path.</p>
+          <ul><li>Run-level timing evidence</li><li>Market and synthetic triggers</li><li>Latency distribution reporting</li><li>Reproducible public methodology</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container architecture">
+      <div class="architecture-copy reveal">
+        <span class="eyebrow" style="color:#79efbf">Enforcement architecture</span>
+        <h2>Designed for the moment alerts are no longer enough.</h2>
+        <p>Prop Rails maintains account state from exchange streams, re-marks equity, evaluates rules, dispatches parallel cut operations and verifies the final account state.</p>
+        <div class="architecture-list">
+          <div class="architecture-item"><i>1</i><div><strong>Detect on exchange events</strong><span>Price, balance, position and order events continuously update risk state.</span></div></div>
+          <div class="architecture-item"><i>2</i><div><strong>Dispatch in the same event-loop turn</strong><span>Close exposure and cancel working orders without waiting for a polling cycle.</span></div></div>
+          <div class="architecture-item"><i>3</i><div><strong>Verify exchange truth</strong><span>Flat means the exchange confirms no position remains—not merely that an order was acknowledged.</span></div></div>
+        </div>
+      </div>
+      <div class="arch-diagram reveal">
+        <div class="arch-row"><div class="arch-box"><small>Private streams</small><strong>Account · Positions · Orders</strong></div><div class="arch-arrow">→</div><div class="arch-box"><small>Public streams</small><strong>Mark price · Instruments</strong></div></div>
+        <div class="arch-core"><small>Prop Rails risk core</small><strong>State → Equity → Rules → Cut plan</strong><p>Monotonic timing, persistent breach state, account isolation and auditable request / fill / flat events.</p></div>
+        <div class="arch-row"><div class="arch-box"><small>WebSocket first path</small><strong>Reduce-only closes · cancels</strong></div><div class="arch-arrow">+</div><div class="arch-box"><small>REST fallback</small><strong>Re-read · retry · verify</strong></div></div>
+        <div class="arch-row" style="margin-bottom:0"><div class="arch-box"><small>Outcome</small><strong>Flat account</strong></div><div class="arch-arrow">→</div><div class="arch-box"><small>Evidence</small><strong>Latency + event report</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Operational controls</span><h2>Risk infrastructure has to survive the ugly edge cases.</h2></div>
+        <p>The useful work is not the dashboard. It is deterministic behaviour through dropped sockets, rate limits, partial fills, restarts and unexpected re-entry.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature reveal"><i>↯</i><h4>Fast-path dispatch</h4><p>Parallel close and cancel operations are initiated immediately after a breach.</p></article>
+        <article class="feature reveal"><i>↻</i><h4>Fallback & retries</h4><p>REST state re-read and retry logic handles incomplete or failed first paths.</p></article>
+        <article class="feature reveal"><i>⊘</i><h4>Keep-flat latch</h4><p>If exposure reappears after a breach, the account remains latched and is cut again.</p></article>
+        <article class="feature reveal"><i>◎</i><h4>Exchange confirmation</h4><p>Reports distinguish acknowledgement, fills and final flat confirmation.</p></article>
+        <article class="feature reveal"><i>▦</i><h4>Persistent state</h4><p>Rule state and breach state survive process restarts instead of silently resetting.</p></article>
+        <article class="feature reveal"><i>⌁</i><h4>Connection resilience</h4><p>WebSocket reconnection and account-level isolation reduce single-failure blast radius.</p></article>
+        <article class="feature reveal"><i>◫</i><h4>Evidence database</h4><p>Every run can be reconstructed from structured events, timestamps and outcomes.</p></article>
+        <article class="feature reveal"><i>✓</i><h4>Permission discipline</h4><p>Pilot mode refuses trade-capable OKX keys and state-changing client calls in code.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact soft">
+    <div class="container">
+      <div class="pilot-panel reveal">
+        <div class="pilot-copy">
+          <span class="eyebrow">Start with evidence</span>
+          <h2>Run a pilot before changing your risk stack.</h2>
+          <p>Give Prop Rails read-only access to an observed account. It records account events and measures when your current risk system intervenes, without sending trade instructions.</p>
+          <div class="pilot-list"><div>No migration of trader infrastructure</div><div>No withdrawal permission</div><div>No forced production cutover</div><div>Reportable baseline before a commercial decision</div></div>
+          <a class="btn btn-dark" href="contact.html">Discuss a pilot →</a>
+        </div>
+        <div class="pilot-terminal">
+          <div class="term-bar"><span>run_01a0b0d4e1172aaa62 · bybit demo</span><span class="ok">read-only</span></div>
+          <div class="term-lines">
+            <div><span class="dim">19:25:31</span> <b>private websocket authenticated</b> — 4 topics in 1.6 s</div>
+            <div><span class="dim">19:25:31</span> <b>api key permission</b> — read_only</div>
+            <div><span class="dim">19:34:20</span> <b>398 equity samples</b> — 27 private messages</div>
+            <div><span class="dim">19:34:20</span> <b>evidence ledger</b> — 0 held-back evaluations, 0 forced accepts</div>
+            <div><span class="dim">19:34:20</span> <b>0 breaches</b> — no position was open on the account</div>
+            <div class="ok">✓ real run · 17 Sep 2026 · 8.8 minutes · nothing sent to the exchange</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="bybit">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">If your traders are on Bybit</span><h2>You already run the model this is built for.</h2></div>
+        <p>Most crypto prop firms hand the trader a Bybit sub-account and take an API key. Prop Rails plugs into that arrangement from the read-only side first, and can add OKX as a second venue on exactly the same pattern.</p>
+      </div>
+      <div class="step-grid">
+        <article class="step"><h3>Measure what you have</h3><p>A read-only key on one of your existing Bybit accounts. Prop Rails records the breach instant and when your current system actually reacts.</p></article>
+        <article class="step"><h3>Validated on Bybit</h3><p>The read-only path was checked against a live Bybit Demo Trading account on 17 September 2026: private stream authenticated in 1.6 s, key reported <code>read_only</code>, nothing sent.</p></article>
+        <article class="step"><h3>Add OKX as a venue</h3><p>OKX demo trading uses the same connect-your-API model as Bybit, so offering it to traders is a venue addition rather than a platform migration.</p></article>
+        <article class="step"><h3>Enforcement is OKX today</h3><p>Stated plainly: active cutting is implemented and benchmarked on OKX v5. On Bybit, Prop Rails observes and reports — it does not claim production enforcement.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <div class="section-head reveal">
+        <div><span class="eyebrow">Who builds this</span><h2>One engineer, and a published record you can check.</h2></div>
+        <p>Prop Rails is not a funded startup with a sales team. That is the point: the claims on this site are small enough that one person can stand behind every one of them.</p>
+      </div>
+      <div class="author-card reveal">
+        <div class="author-mark">PR</div>
+        <div>
+          <h3>Built by one engineer, in Johannesburg</h3>
+          <p>I built the OKX v5 risk engine, forced the 50 breaches, and published the database, the schema and a standard-library script that recomputes every number on this site. If a figure here cannot be reproduced from that repository, I want to know about it.</p>
+          <div class="author-links">
+            <a href="mailto:tafadzwa@proprails.co.za">tafadzwa@proprails.co.za</a>
+            <a href="https://github.com/tkariwo" target="_blank" rel="noopener">github.com/tkariwo</a>
+            <a href="https://github.com/tkariwo/prop-rails-okx-benchmark" target="_blank" rel="noopener">The benchmark repository</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact">
+    <div class="container cta reveal">
+      <div><h2>Know your cut-off time before the next breach.</h2><p>Start with a read-only pilot, or review the public OKX benchmark first.</p></div>
+      <div class="actions"><a class="btn btn-dark" href="contact.html">Run a pilot</a><a class="btn btn-light" href="benchmark.html">View benchmark</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><a class="brand" href="index.html"><img src="assets/logo.svg" alt=""><span>Prop Rails</span></a><p>Real-time risk enforcement and measurable cut-off latency for crypto prop-trading infrastructure.</p></div>
+    <div><h4>Product</h4><div class="footer-links"><a href="platform.html">Platform</a><a href="benchmark.html">Benchmark</a><a href="security.html">Security</a></div></div>
+    <div><h4>Evidence</h4><div class="footer-links"><a href="https://github.com/tkariwo/prop-rails-okx-benchmark" target="_blank" rel="noopener">Public repository</a><a href="benchmark.html#methodology">Methodology</a><a href="benchmark.html#caveats">Caveats</a></div></div>
+    <div><h4>Contact</h4><div class="footer-links"><a href="mailto:tafadzwa@proprails.co.za">tafadzwa@proprails.co.za</a><a href="contact.html">Pilot enquiry</a></div></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2026 Prop Rails · Built and operated in Johannesburg, South Africa</span><span><a href="privacy.html">Privacy</a> · Trading infrastructure software · No investment advice</span></div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>

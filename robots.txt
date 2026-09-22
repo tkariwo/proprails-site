@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://proprails.co.za/sitemap.xml
